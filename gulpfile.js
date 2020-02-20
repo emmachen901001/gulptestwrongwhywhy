@@ -12,7 +12,7 @@ function css(){
             outputStyle:'expanded'
         }))
         .pipe(purge({
-            content:['*.html']
+            content: ['*.html']
         }))
         .pipe(maps.write('./'))
         .pipe(dest('dist/css/'))
@@ -23,14 +23,14 @@ function cssm(){
         .pipe(maps.init())
         .pipe(gulpSass())
         .pipe(purge({
-            content:['*.html']
+            content: ['*.html']
         }))
         .pipe(csso())
         .pipe(rename(function (path) {
             path.basename += '.min'
             path.extname = '.css'            
         }))
-        .piep(maps.write('./'))
+        .pipe(maps.write('./'))
         .pipe(dest('dist/css/'))
 }
 
